@@ -140,7 +140,8 @@ class Clean_data():
             
     def convert_to_int(df, columns):
         for col in columns:
-            df[col] = df[col].astype("int64")
+            df[col] = df[col].astype('int64')
+        return df
 
         
 
