@@ -18,13 +18,9 @@ class Clean_data():
 
 
     def percent_missing_values(self,df):
-    #Calculate total number of cells in dataframe
         totalCells = np.product(df.shape)
-    #Calculate total number of missing values
         missingCount = df.isnull().sum()
-
         totalMissing = missingCount.sum()
-    # calculate percentage of missing percent_missing_values
         print("The Telecom dataset contains", round(((totalMissing/totalCells) * 100), 2), "%", "missing values.")
     
     
@@ -140,7 +136,8 @@ class Clean_data():
             
     def convert_to_int(df, columns):
         for col in columns:
-            df[col] = df[col].astype("int64")
+            df[col] = df[col].astype('int64')
+        return df
 
         
 
