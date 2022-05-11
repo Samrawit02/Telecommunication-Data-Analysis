@@ -39,6 +39,7 @@ class Outlier:
             
             self.df = self.df.drop(self.df[self.df[col] > upper].index)
             self.df = self.df.drop(self.df[self.df[col] < lower].index)
+            
     def replace_outliers_with_iqr(self, columns):
             for col in columns:
                 Q1, Q3 = self.df[col].quantile(0.25), self.df[col].quantile(0.75)
