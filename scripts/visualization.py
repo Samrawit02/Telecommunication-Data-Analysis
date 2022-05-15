@@ -41,7 +41,7 @@ def plot_scatter(df: pd.DataFrame, x_col: str, y_col:str, title: str) -> None:
     plt.show()
 
 def plot_heatmap(df:pd.DataFrame, title:str, cmap='Reds')->None:
-    plt.figure(figsize=(16, 10))
+    plt.figure(figsize=(12,7))
     sns.heatmap(df, annot=True, cmap=cmap, vmin=0, vmax=1, fmt='.2f', linewidths=.7, cbar=True )
     plt.title(title, size=20, fontweight='bold')
     plt.show()
