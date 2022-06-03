@@ -11,14 +11,14 @@ st.set_page_config(page_title="Tellco Data", layout="wide")
 # cache the result so that it doesn't load everytime
 @st.cache()
 def loadData():
-    df = pd.read_csv('data/clean_data.csv')
+    df = pd.read_csv('data/user_orerviewed_data.csv')
     df['Total Avg RTT (ms)'] = df['Avg RTT DL (ms)'] + df['Avg RTT UL (ms)']
     df['Total Avg Bearer TP (kbps)'] = df['Avg Bearer TP DL (kbps)'] + df['Avg Bearer TP UL (kbps)']
     df['Total TCP Retrans. Vol (Bytes)'] = df['TCP DL Retrans. Vol (Bytes)'] + df['TCP UL Retrans. Vol (Bytes)']
 
     df = df[[
         'Bearer Id',
-        'Dur (ms)',
+        'Dur. (ms)',
         'IMSI',
         'MSISDN/Number',
         'IMEI',
@@ -36,7 +36,7 @@ def loadData():
         'Other Data Volume (Bytes)',
         'Total Data Volume (Bytes)']]
 
-    scores_df = pd.read_csv('data/user_scores.csv')
+    scores_df = pd.read_csv('data/user_experience_data.csv')
     return df, scores_df
 
 def displayHandsetsInfo(df):
